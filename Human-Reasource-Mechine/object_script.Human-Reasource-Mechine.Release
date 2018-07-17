@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\login.o
+./release\dbutil.o
+./release\mainwindow.o
+./release\level1.o
+./release\labeldelegate.o
+./release\qrc_pic.o
+./release\moc_login.o
+./release\moc_mainwindow.o
+./release\moc_level1.o
+./release\moc_labeldelegate.o
+);

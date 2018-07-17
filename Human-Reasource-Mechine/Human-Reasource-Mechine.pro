@@ -27,11 +27,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         login.cpp \
     dbutil.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    level1.cpp \
+    labeldelegate.cpp
 
 HEADERS  += login.h \
     dbutil.h \
-    mainwindow.h
+    mainwindow.h \
+    level1.h \
+    labeldelegate.h
 
 FORMS    += login.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    level1.ui
+
+RESOURCES += \
+    pic.qrc

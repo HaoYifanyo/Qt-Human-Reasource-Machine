@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\login.o
+./debug\dbutil.o
+./debug\mainwindow.o
+./debug\level1.o
+./debug\labeldelegate.o
+./debug\qrc_pic.o
+./debug\moc_login.o
+./debug\moc_mainwindow.o
+./debug\moc_level1.o
+./debug\moc_labeldelegate.o
+);

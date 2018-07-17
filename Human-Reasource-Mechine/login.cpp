@@ -82,7 +82,8 @@ void Login::on_pushButton_clicked()
             if(loginPasswd==curPasswd){
 
                 qDebug()<<"success";
-                //打开主界面
+                //关闭登录窗口并打开主界面
+                this->close();
                 mainwindow = new MainWindow;
                 mainwindow->show();
             }else{

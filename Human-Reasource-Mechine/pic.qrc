@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/level">
+        <file>level.png</file>
+        <file>bg1.png</file>
+        <file>bg2.png</file>
+        <file>copyfrom.png</file>
+        <file>copyto.jpg</file>
+        <file>inbox.png</file>
+        <file>jump.png</file>
+        <file>level1info.png</file>
+        <file>outbox.png</file>
+        <file>quesmark.png</file>
+        <file>bg.jpg</file>
+        <file>girl.png</file>
+        <file>start.jpg</file>
+    </qresource>
+</RCC>
