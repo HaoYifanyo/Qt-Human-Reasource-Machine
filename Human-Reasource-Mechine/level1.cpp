@@ -16,8 +16,19 @@ Level1::Level1(QWidget *parent) :
     ui(new Ui::Level1)
 {
     ui->setupUi(this);
+
+    timer = new QTimer(this);
+    connect(timer ,&QTimer::timeout, this, &Level1::update);
+    //设置起始坐标
+    setxy(135,330);
+    //设置结束坐标
+    setxy1(135,330);
+
     //存放“代码”，用数字表示相应内容，0为空
     box=new int[30];
+    for(int i=0;i<30;i++){
+        box[i]=0;
+    }
     //inbox和outbox序列
     inboxline=new int[6];
     for(int i=0;i<6;i++){
@@ -34,31 +45,26 @@ Level1::Level1(QWidget *parent) :
         inboxsignal[i]=0;
     }
 
+    //加载相关图片
     QPixmap bgpix;
     QPixmap bg2pix;
     QPixmap startpix;
+
+    girlpix.load(":/level/girl.png");
+    girlpix = girlpix.scaled(girlpix.width()*0.8,girlpix.height()*0.8,Qt::KeepAspectRatio);
 
     bgpix.load(":/level/bg.jpg");
     bg2pix.load(":/level/bg2.png");
     startpix.load(":/level/start.jpg");
 
-//    inboxpix = &(inboxpix->scaled(inboxpix->width()*0.652,inboxpix->height()*0.652,Qt::IgnoreAspectRatio));
-
-//    bg1pix = bg1pix->scaled(bg1pix->width()*2.0,bg1pix.height()*6.5,Qt::IgnoreAspectRatio);
     bgpix = bgpix.scaled(bgpix.width()*0.9167,bgpix.height()*0.9167,Qt::IgnoreAspectRatio);
     bg2pix = bg2pix.scaled(bg2pix.width()*20,bg2pix.height()*100,Qt::IgnoreAspectRatio);
     startpix = startpix.scaled(startpix.width()*0.75,startpix.height()*0.75,Qt::IgnoreAspectRatio);
-//    ui->inboxlabel->setPixmap(inboxpix);
-//    ui->bg1label->setPixmap(bg1pix);
-    ui->label->setPixmap(bgpix);
+
+    ui->bglabel->setPixmap(bgpix);
     ui->bg2label->setPixmap(bg2pix);
     ui->startlabel->setPixmap(startpix);
-
-
-//    connect(ui->verticalScrollBar, SIGNAL(valueChanged(int)), ui->bg3label, setterSlot);
-//    connect(ui->bg3label, changedSignal, ui->verticalScrollBar, SLOT(setValue(int)));
-
-
+    ui->girllabel->setPixmap(girlpix);
 
 }
 
@@ -69,7 +75,7 @@ Level1::~Level1()
 
 void Level1::mousePressEvent(QMouseEvent *event)        //鼠标按下事件
 {
-//    qDebug() <<event->pos();
+    qDebug() <<event->pos();
     if(event->pos().x()>693&&event->pos().x()<811){   //在可移动标签坐标范围内
         if(event->pos().x()>128&&event->pos().y()<163){    //inbox标签
             QLabel *child = new QLabel;
@@ -181,7 +187,7 @@ void Level1::dragMoveEvent(QDragMoveEvent *event)       //拖动事件
 
 void Level1::dropEvent(QDropEvent *event)       //放下事件
 {
-    qDebug()<<event->pos();
+//    qDebug()<<event->pos();
 
 //    if(event->mimeData()->hasFormat("myImage/jpg"))
 //    {
@@ -370,25 +376,32 @@ void Level1::on_pushButton_clicked()
 //开始运行
 void Level1::on_startButton_clicked()
 {
+//    timer->start(30);
+    qDebug()<<box[0];
     int *temp;
     temp=inboxline;
     //手中是否有数字
     int hand=0;
     //i为代码标签序号
-    for(int i=0;i!=0;i++){
+    for(int i=0;box[i]!=0;i++){
         //inbox标签
         if(box[i]==1){
+             qDebug()<<"box";
             //j为处理的数字的序号
             for(int j=0;j<6;j++){
 
                 if(inboxsignal[j]==0&&hand==0){
                 //将inbox中的数字移出
+                    qDebug()<<"out";
                     inboxsignal[j]=1;
                     inboxline[i]=31;
                     hand=1;
-
+                    ui->girllabel->setPixmap(girlpix);
+                    ui->girllabel->setGeometry(180,200,68,72);
+                    ui->label->setGeometry(135,300,40,40);
                 }else{
                 //出错
+
                 }
             }
         }
@@ -410,4 +423,49 @@ void Level1::on_startButton_clicked()
             }
         }
     }
+}
+
+void Level1::update(){
+
+    if(x==x1&&y!=y1){
+        y=y+1;
+    }else if(x!=x1&&y==y1){
+        x=x+1;
+    }else if(x!=x1&&y!=y1){
+        x=x+1;
+        y=y+1;
+    }
+
+    ui->girllabel->setGeometry(x,y,68,72);
+
+}
+
+//初始化及出错处理
+void Level1::init(){
+    //恢复box为0
+    for(int i=0;i<30;i++){
+        box[i]=0;
+    }
+
+    //inboxline重新随机生成
+    for(int i=0;i<6;i++){
+        inboxline[i]=qrand()%30;
+
+    }
+    ui->label->setText(QString(inboxline[0]));
+}
+
+void Level1::on_stopButton_clicked()
+{
+    timer->stop();
+}
+//设置起始坐标
+void Level1::setxy(int tempx,int tempy){
+    x=tempx;
+    y=tempy;
+}
+//设置结束坐标
+void Level1::setxy1(int tempx,int tempy){
+    x1=tempx;
+    y1=tempy;
 }

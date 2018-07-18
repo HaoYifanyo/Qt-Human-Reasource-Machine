@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QTimer>
 #include "labeldelegate.h"
 
 namespace Ui {
@@ -22,11 +23,17 @@ public:
     void dropEvent(QDropEvent *event);				//放下
     void draw(QLabel *child, QMouseEvent *event,QString name);             //根据坐标绘制移动的label
     void drop(QString boxstr,QDropEvent *event);
+    void update();
+    void init();
+    void setxy(int tempx,int tempy);
+    void setxy1(int tempx,int tempy);
 
 private slots:
     void on_pushButton_clicked();
 
     void on_startButton_clicked();
+
+    void on_stopButton_clicked();
 
 private:
     Ui::Level1 *ui;
@@ -35,6 +42,12 @@ private:
     int *inboxline;
     int *outboxline;
     int *inboxsignal;
+    QTimer *timer;
+    int x;
+    int y;
+    int x1;
+    int y1;
+    QPixmap girlpix;
 //    QLabel *label;
 //    QPixmap *inboxpix;
 //    QPixmap *outboxpix;
