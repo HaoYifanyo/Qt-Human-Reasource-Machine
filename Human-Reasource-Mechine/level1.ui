@@ -65,24 +65,11 @@
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>220</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>run</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="bglabel">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>20</y>
+     <y>0</y>
      <width>1100</width>
      <height>697</height>
     </rect>
@@ -97,7 +84,7 @@
      <x>817</x>
      <y>425</y>
      <width>271</width>
-     <height>270</height>
+     <height>241</height>
     </rect>
    </property>
    <property name="widgetResizable">
@@ -109,29 +96,16 @@
       <x>0</x>
       <y>0</y>
       <width>269</width>
-      <height>268</height>
+      <height>239</height>
      </rect>
     </property>
-    <widget class="QLabel" name="bg2label">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>-1</y>
-       <width>261</width>
-       <height>1001</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>TextLabelfdsfdfdsfsds  dsfdfdfdfdfdcvdfd</string>
-     </property>
-    </widget>
     <widget class="QTableView" name="tableView">
      <property name="geometry">
       <rect>
        <x>0</x>
        <y>0</y>
        <width>271</width>
-       <height>271</height>
+       <height>241</height>
       </rect>
      </property>
      <property name="sizeIncrement">
@@ -139,6 +113,10 @@
        <width>5</width>
        <height>1</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(188, 160, 139);
+alternate-background-color: rgb(188, 160, 139);</string>
      </property>
     </widget>
    </widget>
@@ -156,7 +134,7 @@
     <string notr="true">background: transparent;</string>
    </property>
    <property name="text">
-    <string>Start</string>
+    <string/>
    </property>
    <property name="flat">
     <bool>true</bool>
@@ -165,17 +143,17 @@
   <widget class="QPushButton" name="backButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>610</y>
-     <width>75</width>
-     <height>71</height>
+     <x>0</x>
+     <y>641</y>
+     <width>90</width>
+     <height>55</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">background: transparent;</string>
    </property>
    <property name="text">
-    <string>back</string>
+    <string/>
    </property>
    <property name="flat">
     <bool>true</bool>
@@ -220,7 +198,7 @@
     <string notr="true">background: transparent;</string>
    </property>
    <property name="text">
-    <string>stop</string>
+    <string/>
    </property>
    <property name="flat">
     <bool>true</bool>
@@ -230,7 +208,7 @@
    <property name="geometry">
     <rect>
      <x>96</x>
-     <y>356</y>
+     <y>336</y>
      <width>27</width>
      <height>27</height>
     </rect>
@@ -248,7 +226,7 @@ color: rgb(75, 98, 52);</string>
    <property name="geometry">
     <rect>
      <x>96</x>
-     <y>392</y>
+     <y>374</y>
      <width>27</width>
      <height>27</height>
     </rect>
@@ -266,7 +244,7 @@ color: rgb(75, 98, 52);</string>
    <property name="geometry">
     <rect>
      <x>96</x>
-     <y>432</y>
+     <y>412</y>
      <width>27</width>
      <height>27</height>
     </rect>
@@ -284,7 +262,7 @@ color: rgb(75, 98, 52);</string>
    <property name="geometry">
     <rect>
      <x>96</x>
-     <y>470</y>
+     <y>450</y>
      <width>27</width>
      <height>27</height>
     </rect>
@@ -302,7 +280,7 @@ color: rgb(75, 98, 52);</string>
    <property name="geometry">
     <rect>
      <x>96</x>
-     <y>510</y>
+     <y>488</y>
      <width>27</width>
      <height>27</height>
     </rect>
@@ -320,7 +298,7 @@ color: rgb(75, 98, 52);</string>
    <property name="geometry">
     <rect>
      <x>96</x>
-     <y>545</y>
+     <y>525</y>
      <width>27</width>
      <height>27</height>
     </rect>
@@ -334,9 +312,44 @@ color: rgb(75, 98, 52);</string>
     <string> 1</string>
    </property>
   </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>540</y>
+     <width>21</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(143, 140, 193);</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="clearButton">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>670</y>
+     <width>90</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 87 14pt &quot;Arial&quot;;
+
+background-color: rgb(188, 160, 139);
+color: rgb(104, 101, 86);</string>
+   </property>
+   <property name="text">
+    <string>clear</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>lineEdit</zorder>
   <zorder>bglabel</zorder>
   <zorder>startlabel</zorder>
-  <zorder>pushButton</zorder>
   <zorder>bg1label</zorder>
   <zorder>outboxlabel</zorder>
   <zorder>jumplabel</zorder>
@@ -352,6 +365,7 @@ color: rgb(75, 98, 52);</string>
   <zorder>label_3</zorder>
   <zorder>label_4</zorder>
   <zorder>label_5</zorder>
+  <zorder>clearButton</zorder>
  </widget>
  <resources/>
  <connections/>

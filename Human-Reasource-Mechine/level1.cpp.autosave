@@ -10,6 +10,7 @@
 #include <QPainter>
 #include <QDebug>
 #include <QStandardItemModel>
+#include <QMessageBox>
 
 Level1::Level1(QWidget *parent) :
     QWidget(parent),
@@ -20,30 +21,25 @@ Level1::Level1(QWidget *parent) :
     timer = new QTimer(this);
     connect(timer ,&QTimer::timeout, this, &Level1::update);
     //设置起始坐标
-    setxy(135,330);
+    setxy(135,276);
     //设置结束坐标
     setxy1(135,330);
 
     //存放“代码”，用数字表示相应内容，0为空
     box=new int[30];
-    for(int i=0;i<30;i++){
-        box[i]=0;
-    }
+
     //inbox和outbox序列
     inboxline=new int[6];
-    for(int i=0;i<6;i++){
-        inboxline[i]=qrand()%30;
-    }
 
     outboxline=new int[6];
-    for(int i=0;i<6;i++){
-        outboxline[i]=31;
-    }
+
     //用于标识box的位置,0表示在inbox序列,1表示在途中,2表示在outbox序列
     inboxsignal=new int[6];
-    for(int i=0;i<6;i++){
-        inboxsignal[i]=0;
-    }
+    tableindex=0;
+
+    init();
+    settable();
+
 
     //加载相关图片
     QPixmap bgpix;
@@ -53,7 +49,7 @@ Level1::Level1(QWidget *parent) :
     girlpix.load(":/level/girl.png");
     girlpix = girlpix.scaled(girlpix.width()*0.8,girlpix.height()*0.8,Qt::KeepAspectRatio);
 
-    bgpix.load(":/level/bg.jpg");
+    bgpix.load(":/level/0.png");
     bg2pix.load(":/level/bg2.png");
     startpix.load(":/level/start.jpg");
 
@@ -62,9 +58,12 @@ Level1::Level1(QWidget *parent) :
     startpix = startpix.scaled(startpix.width()*0.75,startpix.height()*0.75,Qt::IgnoreAspectRatio);
 
     ui->bglabel->setPixmap(bgpix);
-    ui->bg2label->setPixmap(bg2pix);
+
     ui->startlabel->setPixmap(startpix);
     ui->girllabel->setPixmap(girlpix);
+
+
+
 
 }
 
@@ -189,13 +188,11 @@ void Level1::dropEvent(QDropEvent *event)       //放下事件
 {
 //    qDebug()<<event->pos();
 
-//    if(event->mimeData()->hasFormat("myImage/jpg"))
-//    {
-
         //若在可放置区域
         if(event->pos().x()>817&&event->pos().x()<1091&&event->pos().y()>425){
             //判断当前放下的label是哪种类型
             int n=0;
+
             if(event->mimeData()->hasFormat("inbox/jpg")){
                 n=1;
             }else if(event->mimeData()->hasFormat("outbox/jpg")){
@@ -212,9 +209,9 @@ void Level1::dropEvent(QDropEvent *event)       //放下事件
             for(int i=0;i<30;i++){
                 if(box[i]==0){
                     box[i]=n;
-//                    qDebug()<<n;
                     if(event->mimeData()->hasFormat("inbox/jpg")){
                         drop("inbox/jpg",event);
+
                         break;
                     }else if(event->mimeData()->hasFormat("outbox/jpg")){
                         drop("outbox/jpg",event);
@@ -227,6 +224,9 @@ void Level1::dropEvent(QDropEvent *event)       //放下事件
                         break;
                     }else if(event->mimeData()->hasFormat("jump/jpg")){
                         drop("jump/jpg",event);
+                        ui->tableView->setIndexWidget(model->index(tableindex,0),ui->lineEdit);
+                        tableindex++;
+
                         break;
                     }
 
@@ -282,6 +282,7 @@ void Level1::draw(QLabel *child,QMouseEvent *event,QString name){
 
 }
 
+//放下label
 void Level1::drop(QString boxstr, QDropEvent *event){
     QByteArray itemData = event->mimeData()->data(boxstr);
     QDataStream dataStream(&itemData,QIODevice::ReadOnly);
@@ -295,63 +296,41 @@ void Level1::drop(QString boxstr, QDropEvent *event){
     newLabel->resize(pixmap.size());
 
 //是图片移动到放下的位置，不设置会默认显示在（0，0）
-    newLabel->move(event->pos() - offset);
-    newLabel->show();
-    newLabel->setAttribute(Qt::WA_DeleteOnClose);
-//                    ui->scrollArea->setWidget(widget);
-//                    ui->tableView
+//    ui->listWidget->addItem(newLabel);
+    ui->tableView->setIndexWidget(model->index(tableindex,0),newLabel);
+//    newLabel->move(event->pos() - offset);
+//    newLabel->show();
+//    newLabel->setAttribute(Qt::WA_DeleteOnClose);
 
     event->setDropAction(Qt::MoveAction);
     event->accept();
+    tableindex++;
 
 }
 
-void Level1::on_pushButton_clicked()
+
+//设置tableview
+void Level1::settable()
 {
-     qDebug() << QObject::sender()->objectName();
-     QStandardItemModel *model = new QStandardItemModel();
-//     for(int i=0;i<30;i++)
-         model->setVerticalHeaderItem(0, new QStandardItem(QObject::tr("1")));
-         model->setVerticalHeaderItem(1, new QStandardItem(QObject::tr("2")));
-         model->setVerticalHeaderItem(2, new QStandardItem(QObject::tr("3")));
-         model->setVerticalHeaderItem(3, new QStandardItem(QObject::tr("4")));
-         model->setVerticalHeaderItem(4, new QStandardItem(QObject::tr("5")));
-//         model->setHorizontalHeaderItem(0, new QStandardItem(QObject::tr("1")));
+//     qDebug() << QObject::sender()->objectName();
+     model = new QStandardItemModel();
+     model->setColumnCount(1);
+     model->setRowCount(30);
 
+     //利用setModel()方法将数据模型与QTableView绑定
+     ui->tableView->setModel(model);
+     //设置表头1-30
+     for(int i=0;i++;i<30){
+         QStandardItem *standItem1 = new QStandardItem(tr("%1").arg(i+1));
 
+         model->setItem(i,0,standItem1);                                //表格第i行，第0列添加一项内容
+         model->item(i,0)->setTextAlignment(Qt::AlignCenter);           //设置表格内容居中
 
-         //利用setModel()方法将数据模型与QTableView绑定
-         ui->tableView->setModel(model);
-         ui->tableView->setColumnWidth(0,100);
-//     m_labeldelegate = new LabelDelegate(this);
+     }
 
-//     ui->tableView->setItemDelegate(m_labeldelegate);
- //    ui->tableView->setItemDelegateForLine(0, m_labeldelegate);
+         ui->tableView->setColumnWidth(0,230);
 
 }
-
-//void Level1::paint(QPainter * painter,
-//                           const QStyleOptionViewItem & option,
-//                           const QModelIndex & index) const
-//{
-//    if(index.column()!=0){
-//        QItemDelegate::paint(painter,option,index);
-//        return;
-//    }
-//    const QAbstractItemModel * model=index.model();
-//    QVariant var=model->data(index,Qt::CheckStateRole);
-//    if(var.isNull()) var=false;
-//    const QPixmap & star=var.toBool()?
-//favouritePixmap:notFavouritePixmap;
-
-//    int width=star.width();
-//    int height=star.height();
-//    QRect rect=option.rect;
-//    int x=rect.x()+rect.width()/2-width/2;
-//    int y=rect.y()+rect.height()/2-height/2;
-
-//    painter->drawPixmap(x,y,star);
-//}
 
 
 //QByteArray itemData = event->mimeData()->data("inbox/jpg");
@@ -395,14 +374,15 @@ void Level1::on_startButton_clicked()
                     inboxsignal[j]=1;
                     inboxline[i]=31;
                     hand=1;
-                    ui->girllabel->setPixmap(girlpix);
-                    ui->girllabel->setGeometry(180,200,68,72);
-                    ui->label->setGeometry(135,300,40,40);
+
+                    ui->label->setGeometry(207,312,27,27);
+                    break;
                 }else{
                 //出错
                     QMessageBox::information(this, tr("error"),
                                              tr("运行错误"));
                     init();
+                    break;
                 }
             }
         }
@@ -414,30 +394,70 @@ void Level1::on_startButton_clicked()
 
                 if(inboxsignal[j]==1&&hand==1){
                 //将inbox中的数字移出
-                    inboxsignal[j]=2;
                     outboxline[j]=temp[j];
                     hand=0;
+//554
+                    setxy1(459,276);
+                    timer->start(20);
+                    if(x==x1){
+                        timer->stop();
+                        ui->label->setGeometry(554,312,27,27);
+                    }
 
+//
+                    inboxsignal[j]=2;
+                    break;
                 }else{
                 //出错
+                    QMessageBox::information(this, tr("error"),
+                                             tr("运行错误"));
+                    init();
+                    break;
                 }
             }
+        }
+        //copyto标签
+        if(box[i]==3){
+
         }
     }
 }
 
 void Level1::update(){
 
-    if(x==x1&&y!=y1){
-        y=y+1;
-    }else if(x!=x1&&y==y1){
+//    if(x==x1&&y!=y1){
+//        y=y+1;
+//    }else if(x!=x1&&y==y1){
+//        x=x+1;
+//    }else if(x!=x1&&y!=y1){
+//        x=x+1;
+//        y=y+1;
+//    }
+    if(x<x1){
         x=x+1;
-    }else if(x!=x1&&y!=y1){
-        x=x+1;
-        y=y+1;
+    }else if(x>x1){
+        x=x-1;
     }
 
+
     ui->girllabel->setGeometry(x,y,68,72);
+    //令在途中的box随girl移动
+        if(inboxsignal[0]==1){
+            ui->label->setGeometry(x+76,312,27,27);
+        }else if(inboxsignal[1]==1){
+            ui->label_1->setGeometry(x+76,312,27,27);
+        }else if(inboxsignal[2]==1){
+            ui->label_2->setGeometry(x+76,312,27,27);
+        }else if(inboxsignal[3]==1){
+            ui->label_3->setGeometry(x+76,312,27,27);
+        }else if(inboxsignal[4]==1){
+            ui->label_4->setGeometry(x+76,312,27,27);
+        }else if(inboxsignal[5]==1){
+            ui->label_5->setGeometry(x+76,312,27,27);
+        }
+
+
+
 
 }
 
@@ -453,20 +473,24 @@ void Level1::init(){
         inboxline[i]=qrand()%30;
 
     }
-    ui->label->setText(QString(inboxline[0]));
-    ui->label_1->setText(QString(inboxline[1]));
-    ui->label_2->setText(QString(inboxline[2]));
-    ui->label_3->setText(QString(inboxline[3]));
-    ui->label_4->setText(QString(inboxline[4]));
-    ui->label_5->setText(QString(inboxline[5]));
-    
-    ui->label->setGeometry(96,356,27,27);
-    ui->label_1->setGeometry(96,394,27,27);
-    ui->label_2->setGeometry(96,432,27,27);
-    ui->label_3->setGeometry(96,470,27,27);
-    ui->label_4->setGeometry(96,508,27,27);
-    ui->label_5->setGeometry(96,545,27,27);
-    
+
+    ui->label->setText(QString::number(inboxline[0],10));
+    ui->label_1->setText(QString::number(inboxline[1],10));
+    ui->label_2->setText(QString::number(inboxline[2],10));
+    ui->label_3->setText(QString::number(inboxline[3],10));
+    ui->label_4->setText(QString::number(inboxline[4],10));
+    ui->label_5->setText(QString::number(inboxline[5],10));
+
+    ui->label->setGeometry(96,336,27,27);
+    ui->label_1->setGeometry(96,374,27,27);
+    ui->label_2->setGeometry(96,412,27,27);
+    ui->label_3->setGeometry(96,450,27,27);
+    ui->label_4->setGeometry(96,488,27,27);
+    ui->label_5->setGeometry(96,525,27,27);
+
+    ui->girllabel->setGeometry(151,276,68,72);
+
+
     //输出不可能为31,所以将31作为未改变的初始值
     for(int i=0;i<6;i++){
         outboxline[i]=31;
@@ -475,8 +499,8 @@ void Level1::init(){
     for(int i=0;i<6;i++){
         inboxsignal[i]=0;
     }
-    
-    
+
+
 }
 
 //停止运行
@@ -494,4 +518,9 @@ void Level1::setxy(int tempx,int tempy){
 void Level1::setxy1(int tempx,int tempy){
     x1=tempx;
     y1=tempy;
+}
+
+void Level1::on_clearButton_clicked()
+{
+    
 }

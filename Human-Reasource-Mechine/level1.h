@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QLabel>
 #include <QTimer>
+#include <QStandardItem>
 #include "labeldelegate.h"
 
 namespace Ui {
@@ -24,6 +25,7 @@ public:
     void draw(QLabel *child, QMouseEvent *event,QString name);             //根据坐标绘制移动的label
     void drop(QString boxstr,QDropEvent *event);
     void update();
+    void settable();
     void init();
     void setxy(int tempx,int tempy);
     void setxy1(int tempx,int tempy);
@@ -38,7 +40,7 @@ private slots:
 private:
     Ui::Level1 *ui;
     int *box;
-    LabelDelegate *m_labeldelegate;
+//    LabelDelegate *m_labeldelegate;
     int *inboxline;
     int *outboxline;
     int *inboxsignal;
@@ -47,15 +49,10 @@ private:
     int y;
     int x1;
     int y1;
+    int tableindex;
     QPixmap girlpix;
-//    QLabel *label;
-//    QPixmap *inboxpix;
-//    QPixmap *outboxpix;
-//    QPixmap *jumppix;
-//    QPixmap *copyfrompix;
-//    QPixmap *copytopix;
-//    QPixmap *bg1pix;
-//    QPixmap *bgpix;
+    QStandardItemModel *model;
+
 };
 
 #endif // LEVEL1_H

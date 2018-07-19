@@ -28,14 +28,12 @@ SOURCES += main.cpp\
         login.cpp \
     dbutil.cpp \
     mainwindow.cpp \
-    level1.cpp \
-    labeldelegate.cpp
+    level1.cpp
 
 HEADERS  += login.h \
     dbutil.h \
     mainwindow.h \
-    level1.h \
-    labeldelegate.h
+    level1.h
 
 FORMS    += login.ui \
     mainwindow.ui \
