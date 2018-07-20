@@ -54,22 +54,22 @@ public:
         backButton->setFlat(true);
         level1Button = new QPushButton(centralwidget);
         level1Button->setObjectName(QStringLiteral("level1Button"));
-        level1Button->setGeometry(QRect(400, 440, 111, 101));
+        level1Button->setGeometry(QRect(380, 450, 111, 101));
         level1Button->setStyleSheet(QStringLiteral("background:transparent"));
         level1Button->setFlat(true);
         level2Button = new QPushButton(centralwidget);
         level2Button->setObjectName(QStringLiteral("level2Button"));
-        level2Button->setGeometry(QRect(400, 340, 111, 91));
+        level2Button->setGeometry(QRect(380, 350, 111, 91));
         level2Button->setStyleSheet(QStringLiteral("background:transparent"));
         level2Button->setFlat(true);
         level3Button = new QPushButton(centralwidget);
         level3Button->setObjectName(QStringLiteral("level3Button"));
-        level3Button->setGeometry(QRect(400, 240, 111, 91));
+        level3Button->setGeometry(QRect(380, 250, 111, 91));
         level3Button->setStyleSheet(QStringLiteral("background:transparent"));
         level3Button->setFlat(true);
         level4Button = new QPushButton(centralwidget);
         level4Button->setObjectName(QStringLiteral("level4Button"));
-        level4Button->setGeometry(QRect(400, 140, 111, 91));
+        level4Button->setGeometry(QRect(380, 150, 111, 91));
         level4Button->setStyleSheet(QStringLiteral("background:transparent"));
         level4Button->setFlat(true);
         level4Button_2 = new QPushButton(centralwidget);
@@ -78,6 +78,13 @@ public:
         level4Button_2->setStyleSheet(QStringLiteral("background:transparent"));
         level4Button_2->setFlat(true);
         MainWindow->setCentralWidget(centralwidget);
+        levellabel->raise();
+        backButton->raise();
+        level1Button->raise();
+        level4Button_2->raise();
+        level2Button->raise();
+        level3Button->raise();
+        level4Button->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
         menubar->setGeometry(QRect(0, 0, 1090, 23));
@@ -95,11 +102,11 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         levellabel->setText(QString());
-        backButton->setText(QApplication::translate("MainWindow", "a", Q_NULLPTR));
-        level1Button->setText(QApplication::translate("MainWindow", "a", Q_NULLPTR));
-        level2Button->setText(QApplication::translate("MainWindow", "a", Q_NULLPTR));
-        level3Button->setText(QApplication::translate("MainWindow", "a", Q_NULLPTR));
-        level4Button->setText(QApplication::translate("MainWindow", "a", Q_NULLPTR));
+        backButton->setText(QString());
+        level1Button->setText(QString());
+        level2Button->setText(QString());
+        level3Button->setText(QString());
+        level4Button->setText(QString());
         level4Button_2->setText(QApplication::translate("MainWindow", "a", Q_NULLPTR));
     } // retranslateUi
 

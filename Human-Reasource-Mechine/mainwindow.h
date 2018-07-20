@@ -15,6 +15,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+   static Level1 *level;
 
 
 private slots:
@@ -26,9 +27,18 @@ private slots:
 
     void on_level1Button_clicked();
 
+    void on_level2Button_clicked();
+
+    void on_level3Button_clicked();
+
+    void on_level4Button_clicked();
+
+    void on_level2Button_pressed();
+
 private:
     Ui::MainWindow *ui;
     Level1 *level1;
+
 
 };
 

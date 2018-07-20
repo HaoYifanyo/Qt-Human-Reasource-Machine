@@ -168,6 +168,9 @@ alternate-background-color: rgb(188, 160, 139);</string>
      <height>150</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -222,116 +225,13 @@ color: rgb(75, 98, 52);</string>
     <string> 1</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_1">
-   <property name="geometry">
-    <rect>
-     <x>96</x>
-     <y>374</y>
-     <width>27</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:rgb(163, 203, 89);
-font: 87 12pt &quot;Arial Black&quot;;
-color: rgb(75, 98, 52);</string>
-   </property>
-   <property name="text">
-    <string> 1</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>96</x>
-     <y>412</y>
-     <width>27</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:rgb(163, 203, 89);
-font: 87 12pt &quot;Arial Black&quot;;
-color: rgb(75, 98, 52);</string>
-   </property>
-   <property name="text">
-    <string> 1</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>96</x>
-     <y>450</y>
-     <width>27</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:rgb(163, 203, 89);
-font: 87 12pt &quot;Arial Black&quot;;
-color: rgb(75, 98, 52);</string>
-   </property>
-   <property name="text">
-    <string> 1</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>96</x>
-     <y>488</y>
-     <width>27</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:rgb(163, 203, 89);
-font: 87 12pt &quot;Arial Black&quot;;
-color: rgb(75, 98, 52);</string>
-   </property>
-   <property name="text">
-    <string> 1</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>96</x>
-     <y>525</y>
-     <width>27</width>
-     <height>27</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:rgb(163, 203, 89);
-font: 87 12pt &quot;Arial Black&quot;;
-color: rgb(75, 98, 52);</string>
-   </property>
-   <property name="text">
-    <string> 1</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>540</y>
-     <width>21</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(143, 140, 193);</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="clearButton">
    <property name="geometry">
     <rect>
      <x>820</x>
-     <y>670</y>
+     <y>660</y>
      <width>90</width>
-     <height>41</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -347,8 +247,44 @@ color: rgb(104, 101, 86);</string>
     <bool>true</bool>
    </property>
   </widget>
-  <zorder>lineEdit</zorder>
+  <widget class="QPushButton" name="clearButton_2">
+   <property name="geometry">
+    <rect>
+     <x>979</x>
+     <y>660</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 87 14pt &quot;Arial&quot;;
+
+background-color: rgb(188, 160, 139);
+color: rgb(104, 101, 86);</string>
+   </property>
+   <property name="text">
+    <string>delete line</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="llabel">
+   <property name="geometry">
+    <rect>
+     <x>829</x>
+     <y>101</y>
+     <width>261</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label</zorder>
   <zorder>bglabel</zorder>
+  <zorder>girllabel</zorder>
   <zorder>startlabel</zorder>
   <zorder>bg1label</zorder>
   <zorder>outboxlabel</zorder>
@@ -358,14 +294,9 @@ color: rgb(104, 101, 86);</string>
   <zorder>startButton</zorder>
   <zorder>backButton</zorder>
   <zorder>stopButton</zorder>
-  <zorder>girllabel</zorder>
-  <zorder>label</zorder>
-  <zorder>label_1</zorder>
-  <zorder>label_2</zorder>
-  <zorder>label_3</zorder>
-  <zorder>label_4</zorder>
-  <zorder>label_5</zorder>
   <zorder>clearButton</zorder>
+  <zorder>clearButton_2</zorder>
+  <zorder>llabel</zorder>
  </widget>
  <resources/>
  <connections/>

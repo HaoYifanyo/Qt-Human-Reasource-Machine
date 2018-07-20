@@ -40,7 +40,7 @@
      <string notr="true">background:transparent</string>
     </property>
     <property name="text">
-     <string>a</string>
+     <string/>
     </property>
     <property name="flat">
      <bool>true</bool>
@@ -49,8 +49,8 @@
    <widget class="QPushButton" name="level1Button">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>440</y>
+      <x>380</x>
+      <y>450</y>
       <width>111</width>
       <height>101</height>
      </rect>
@@ -59,7 +59,7 @@
      <string notr="true">background:transparent</string>
     </property>
     <property name="text">
-     <string>a</string>
+     <string/>
     </property>
     <property name="flat">
      <bool>true</bool>
@@ -68,8 +68,8 @@
    <widget class="QPushButton" name="level2Button">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>340</y>
+      <x>380</x>
+      <y>350</y>
       <width>111</width>
       <height>91</height>
      </rect>
@@ -78,7 +78,7 @@
      <string notr="true">background:transparent</string>
     </property>
     <property name="text">
-     <string>a</string>
+     <string/>
     </property>
     <property name="flat">
      <bool>true</bool>
@@ -87,8 +87,8 @@
    <widget class="QPushButton" name="level3Button">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>240</y>
+      <x>380</x>
+      <y>250</y>
       <width>111</width>
       <height>91</height>
      </rect>
@@ -97,7 +97,7 @@
      <string notr="true">background:transparent</string>
     </property>
     <property name="text">
-     <string>a</string>
+     <string/>
     </property>
     <property name="flat">
      <bool>true</bool>
@@ -106,8 +106,8 @@
    <widget class="QPushButton" name="level4Button">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>140</y>
+      <x>380</x>
+      <y>150</y>
       <width>111</width>
       <height>91</height>
      </rect>
@@ -116,7 +116,7 @@
      <string notr="true">background:transparent</string>
     </property>
     <property name="text">
-     <string>a</string>
+     <string/>
     </property>
     <property name="flat">
      <bool>true</bool>
@@ -141,6 +141,13 @@
      <bool>true</bool>
     </property>
    </widget>
+   <zorder>levellabel</zorder>
+   <zorder>backButton</zorder>
+   <zorder>level1Button</zorder>
+   <zorder>level4Button_2</zorder>
+   <zorder>level2Button</zorder>
+   <zorder>level3Button</zorder>
+   <zorder>level4Button</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

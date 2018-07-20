@@ -4,10 +4,10 @@ INPUT(
 ./release\dbutil.o
 ./release\mainwindow.o
 ./release\level1.o
-./release\labeldelegate.o
+./release\level2.o
 ./release\qrc_pic.o
 ./release\moc_login.o
 ./release\moc_mainwindow.o
 ./release\moc_level1.o
-./release\moc_labeldelegate.o
+./release\moc_level2.o
 );

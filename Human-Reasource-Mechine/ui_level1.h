@@ -15,7 +15,6 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QTableView>
@@ -40,13 +39,9 @@ public:
     QLabel *girllabel;
     QPushButton *stopButton;
     QLabel *label;
-    QLabel *label_1;
-    QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_4;
-    QLabel *label_5;
-    QLineEdit *lineEdit;
     QPushButton *clearButton;
+    QPushButton *clearButton_2;
+    QLabel *llabel;
 
     void setupUi(QWidget *Level1)
     {
@@ -95,6 +90,7 @@ public:
         startlabel = new QLabel(Level1);
         startlabel->setObjectName(QStringLiteral("startlabel"));
         startlabel->setGeometry(QRect(200, 570, 521, 150));
+        startlabel->setStyleSheet(QStringLiteral(""));
         girllabel = new QLabel(Level1);
         girllabel->setObjectName(QStringLiteral("girllabel"));
         girllabel->setGeometry(QRect(180, 200, 68, 72));
@@ -109,50 +105,28 @@ public:
         label->setStyleSheet(QLatin1String("background:rgb(163, 203, 89);\n"
 "font: 87 12pt \"Arial Black\";\n"
 "color: rgb(75, 98, 52);"));
-        label_1 = new QLabel(Level1);
-        label_1->setObjectName(QStringLiteral("label_1"));
-        label_1->setGeometry(QRect(96, 374, 27, 27));
-        label_1->setStyleSheet(QLatin1String("background:rgb(163, 203, 89);\n"
-"font: 87 12pt \"Arial Black\";\n"
-"color: rgb(75, 98, 52);"));
-        label_2 = new QLabel(Level1);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(96, 412, 27, 27));
-        label_2->setStyleSheet(QLatin1String("background:rgb(163, 203, 89);\n"
-"font: 87 12pt \"Arial Black\";\n"
-"color: rgb(75, 98, 52);"));
-        label_3 = new QLabel(Level1);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(96, 450, 27, 27));
-        label_3->setStyleSheet(QLatin1String("background:rgb(163, 203, 89);\n"
-"font: 87 12pt \"Arial Black\";\n"
-"color: rgb(75, 98, 52);"));
-        label_4 = new QLabel(Level1);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(96, 488, 27, 27));
-        label_4->setStyleSheet(QLatin1String("background:rgb(163, 203, 89);\n"
-"font: 87 12pt \"Arial Black\";\n"
-"color: rgb(75, 98, 52);"));
-        label_5 = new QLabel(Level1);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(96, 525, 27, 27));
-        label_5->setStyleSheet(QLatin1String("background:rgb(163, 203, 89);\n"
-"font: 87 12pt \"Arial Black\";\n"
-"color: rgb(75, 98, 52);"));
-        lineEdit = new QLineEdit(Level1);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(540, 540, 21, 20));
-        lineEdit->setStyleSheet(QStringLiteral("background-color: rgb(143, 140, 193);"));
         clearButton = new QPushButton(Level1);
         clearButton->setObjectName(QStringLiteral("clearButton"));
-        clearButton->setGeometry(QRect(820, 670, 90, 41));
+        clearButton->setGeometry(QRect(820, 660, 90, 31));
         clearButton->setStyleSheet(QLatin1String("font: 87 14pt \"Arial\";\n"
 "\n"
 "background-color: rgb(188, 160, 139);\n"
 "color: rgb(104, 101, 86);"));
         clearButton->setFlat(true);
-        lineEdit->raise();
+        clearButton_2 = new QPushButton(Level1);
+        clearButton_2->setObjectName(QStringLiteral("clearButton_2"));
+        clearButton_2->setGeometry(QRect(979, 660, 101, 31));
+        clearButton_2->setStyleSheet(QLatin1String("font: 87 14pt \"Arial\";\n"
+"\n"
+"background-color: rgb(188, 160, 139);\n"
+"color: rgb(104, 101, 86);"));
+        clearButton_2->setFlat(true);
+        llabel = new QLabel(Level1);
+        llabel->setObjectName(QStringLiteral("llabel"));
+        llabel->setGeometry(QRect(829, 101, 261, 321));
+        label->raise();
         bglabel->raise();
+        girllabel->raise();
         startlabel->raise();
         bg1label->raise();
         outboxlabel->raise();
@@ -162,14 +136,9 @@ public:
         startButton->raise();
         backButton->raise();
         stopButton->raise();
-        girllabel->raise();
-        label->raise();
-        label_1->raise();
-        label_2->raise();
-        label_3->raise();
-        label_4->raise();
-        label_5->raise();
         clearButton->raise();
+        clearButton_2->raise();
+        llabel->raise();
 
         retranslateUi(Level1);
 
@@ -190,12 +159,9 @@ public:
         girllabel->setText(QString());
         stopButton->setText(QString());
         label->setText(QApplication::translate("Level1", " 1", Q_NULLPTR));
-        label_1->setText(QApplication::translate("Level1", " 1", Q_NULLPTR));
-        label_2->setText(QApplication::translate("Level1", " 1", Q_NULLPTR));
-        label_3->setText(QApplication::translate("Level1", " 1", Q_NULLPTR));
-        label_4->setText(QApplication::translate("Level1", " 1", Q_NULLPTR));
-        label_5->setText(QApplication::translate("Level1", " 1", Q_NULLPTR));
         clearButton->setText(QApplication::translate("Level1", "clear", Q_NULLPTR));
+        clearButton_2->setText(QApplication::translate("Level1", "delete line", Q_NULLPTR));
+        llabel->setText(QString());
     } // retranslateUi
 
 };

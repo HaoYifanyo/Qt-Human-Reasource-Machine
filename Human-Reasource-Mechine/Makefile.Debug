@@ -113,20 +113,24 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_pic.cpp
 debug/qrc_pic.cpp: pic.qrc \
 		../../Qt5/5.8/mingw53_32/bin/rcc.exe \
-		start.jpg \
-		level.png \
-		bg2.png \
-		level1info.png \
-		quesmark.png \
 		bg.jpg \
-		bg1.png \
-		0.png \
 		copyto.jpg \
-		jump.png \
-		outbox.png \
-		copyfrom.png \
+		start.jpg \
+		level1info.png \
+		level.png \
+		bg1.png \
+		bg2.png \
 		girl.png \
-		inbox.png
+		0.png \
+		1.png \
+		inbox.png \
+		2.png \
+		quesmark.png \
+		jump.png \
+		3.png \
+		icon.ico \
+		copyfrom.png \
+		outbox.png
 	D:\Qt5\5.8\mingw53_32\bin\rcc.exe -name pic pic.qrc -o debug\qrc_pic.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -259,6 +263,12 @@ debug/moc_login.cpp: ../../Qt5/5.8/mingw53_32/include/QtWidgets/QWidget \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QStandardItem \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qstandarditemmodel.h \
 		../../Qt5/5.8/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/QLineEdit \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
 		labeldelegate.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QApplication \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qapplication.h \
@@ -272,8 +282,6 @@ debug/moc_login.cpp: ../../Qt5/5.8/mingw53_32/include/QtWidgets/QWidget \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QPainter \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qpainter.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QStyleOption \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qstyleoption.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractspinbox.h \
@@ -410,6 +418,12 @@ debug/moc_mainwindow.cpp: ../../Qt5/5.8/mingw53_32/include/QtWidgets/QMainWindow
 		../../Qt5/5.8/mingw53_32/include/QtGui/QStandardItem \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qstandarditemmodel.h \
 		../../Qt5/5.8/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/QLineEdit \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
 		labeldelegate.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QApplication \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qapplication.h \
@@ -423,8 +437,6 @@ debug/moc_mainwindow.cpp: ../../Qt5/5.8/mingw53_32/include/QtWidgets/QMainWindow
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QPainter \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qpainter.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QStyleOption \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qstyleoption.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractspinbox.h \
@@ -557,6 +569,12 @@ debug/moc_level1.cpp: ../../Qt5/5.8/mingw53_32/include/QtWidgets/QWidget \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qstandarditemmodel.h \
 		../../Qt5/5.8/mingw53_32/include/QtCore/qabstractitemmodel.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qicon.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/QLineEdit \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
 		labeldelegate.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QApplication \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qapplication.h \
@@ -570,8 +588,6 @@ debug/moc_level1.cpp: ../../Qt5/5.8/mingw53_32/include/QtWidgets/QWidget \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QPainter \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qpainter.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QStyleOption \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qstyleoption.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractspinbox.h \
@@ -745,6 +761,12 @@ debug/main.o: main.cpp login.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QStandardItem \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qstandarditemmodel.h \
 		../../Qt5/5.8/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/QLineEdit \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
 		labeldelegate.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QApplication \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qapplication.h \
@@ -758,8 +780,6 @@ debug/main.o: main.cpp login.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QPainter \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qpainter.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QStyleOption \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qstyleoption.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractspinbox.h \
@@ -900,6 +920,12 @@ debug/login.o: login.cpp login.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QStandardItem \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qstandarditemmodel.h \
 		../../Qt5/5.8/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/QLineEdit \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
 		labeldelegate.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QApplication \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qapplication.h \
@@ -913,8 +939,6 @@ debug/login.o: login.cpp login.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QPainter \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qpainter.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QStyleOption \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qstyleoption.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractspinbox.h \
@@ -943,10 +967,6 @@ debug/login.o: login.cpp login.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractitemview.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
 		../../Qt5/5.8/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		../../Qt5/5.8/mingw53_32/include/QtWidgets/QLineEdit \
-		../../Qt5/5.8/mingw53_32/include/QtWidgets/qlineedit.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qtextcursor.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qtextformat.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QPushButton \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
@@ -1333,6 +1353,12 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QStandardItem \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qstandarditemmodel.h \
 		../../Qt5/5.8/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/QLineEdit \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
 		labeldelegate.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QApplication \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qapplication.h \
@@ -1346,8 +1372,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QPainter \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qpainter.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QStyleOption \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qstyleoption.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractspinbox.h \
@@ -1384,6 +1408,12 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QStatusBar \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qstatusbar.h \
+		login.h \
+		dbutil.h \
+		../../Qt5/5.8/mingw53_32/include/QtCore/QString \
+		../../Qt5/5.8/mingw53_32/include/QtSql/QSqlDatabase \
+		../../Qt5/5.8/mingw53_32/include/QtSql/qsqldatabase.h \
+		../../Qt5/5.8/mingw53_32/include/QtSql/qtsqlglobal.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o mainwindow.cpp
 
@@ -1499,6 +1529,12 @@ debug/level1.o: level1.cpp level1.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qstandarditemmodel.h \
 		../../Qt5/5.8/mingw53_32/include/QtCore/qabstractitemmodel.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qicon.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/QLineEdit \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qlineedit.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
+		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
 		labeldelegate.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QApplication \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qapplication.h \
@@ -1512,8 +1548,6 @@ debug/level1.o: level1.cpp level1.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qdialog.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QPainter \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qpainter.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qtextoption.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qpen.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QStyleOption \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qstyleoption.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractspinbox.h \
@@ -1543,10 +1577,6 @@ debug/level1.o: level1.cpp level1.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractitemview.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
 		../../Qt5/5.8/mingw53_32/include/QtCore/qitemselectionmodel.h \
-		../../Qt5/5.8/mingw53_32/include/QtWidgets/QLineEdit \
-		../../Qt5/5.8/mingw53_32/include/QtWidgets/qlineedit.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qtextcursor.h \
-		../../Qt5/5.8/mingw53_32/include/QtGui/qtextformat.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QPushButton \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qpushbutton.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qabstractbutton.h \
@@ -1554,6 +1584,9 @@ debug/level1.o: level1.cpp level1.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qscrollarea.h \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QTableView \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/qtableview.h \
+		mainwindow.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/QMainWindow \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qmainwindow.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QPixmap \
 		../../Qt5/5.8/mingw53_32/include/QtCore/QByteArray \
 		../../Qt5/5.8/mingw53_32/include/QtCore/QDataStream \
@@ -1563,7 +1596,12 @@ debug/level1.o: level1.cpp level1.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/qdrag.h \
 		../../Qt5/5.8/mingw53_32/include/QtGui/QStandardItemModel \
 		../../Qt5/5.8/mingw53_32/include/QtWidgets/QMessageBox \
-		../../Qt5/5.8/mingw53_32/include/QtWidgets/qmessagebox.h
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qmessagebox.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/QVBoxLayout \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qboxlayout.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qlayout.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		../../Qt5/5.8/mingw53_32/include/QtWidgets/qgridlayout.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\level1.o level1.cpp
 
 debug/qrc_pic.o: debug/qrc_pic.cpp 
